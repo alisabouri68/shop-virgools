@@ -1,0 +1,431 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --spacing-84px: 84px;
+  --color-blue-90: #aee6e6;
+  --color-orange-d: oklch(0.279 0.041 260.031);
+}
+
+:root {
+  --foreground: oklch(0.279 0.041 260.031);
+  --background: #ffffff;
+}
+
+@font-face {
+  font-family: dana;
+  src: url("../public/fonts/DanaFaNum-DemiBold.woff2");
+}
+
+.dark {
+  --background: oklch(0.279 0.041 260.031);
+  --foreground: #ffffff;
+}
+
+body {
+  font-family: dana;
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.deactivenav {
+  visibility: hidden;
+  opacity: 0;
+  top: 120px;
+  right: -120px;
+}
+
+.activenav {
+  visibility: visible;
+  opacity: 1;
+  top: 84px;
+  right: 0;
+}
+
+.breadcrumb-parent {
+  padding: 5px 15px;
+
+  >div {
+    &:last-child {
+      flex-grow: 1;
+      clip-path: polygon(100% 0%, 99% 50%, 100% 100%, 0 100%, 0 50%, 0 0);
+    }
+  }
+}
+
+.breadcrumb-home {
+  clip-path: polygon(12% 0, 100% 0%, 100% 100%, 12% 100%, 0% 50%);
+  width: 100px;
+  background: var(--background);
+}
+
+.breadcrumb-one {
+  clip-path: polygon(100% 0%, 94% 50%, 100% 100%, 5% 99%, 0 50%, 5% 0);
+  background: var(--background);
+  min-width: 100px;
+}
+
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control_indicator {
+  position: absolute;
+  top: 0px;
+  left: 110px;
+  height: 19px;
+  width: 20px;
+  background: #c8c8c8;
+  border: 0px ridge #000000;
+  border-radius: undefinedpx;
+}
+
+.control:hover input~.control_indicator,
+.control input:focus~.control_indicator {
+  background: #c8c8c8;
+}
+
+.control input:checked~.control_indicator {
+  background: #fe9a00;
+}
+
+.control:hover input:not([disabled]):checked~.control_indicator,
+.control input:checked:focus~.control_indicator {
+  background: #fe9a00;
+}
+
+.control input:disabled~.control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control_indicator:after {
+  box-sizing: unset;
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.control input:checked~.control_indicator:after {
+  display: block;
+}
+
+.control-radio .control_indicator {
+  border-radius: 50%;
+}
+
+.control-radio .control_indicator:after {
+  left: 7px;
+  top: 6px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: background 250ms;
+}
+
+.control-radio input:disabled~.control_indicator:after {
+  background: #7b7b7b;
+}
+
+.control-radio .control_indicator::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: -0.6rem;
+  margin-top: -0.6rem;
+  background: #2aa1c0;
+  border-radius: 3rem;
+  opacity: 0.6;
+  z-index: 99999;
+  transform: scale(0);
+}
+
+@keyframes s-ripple {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.01;
+    transform: scale(1);
+  }
+}
+
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.control-radio input+.control_indicator::before {
+  animation: s-ripple 250ms ease-out;
+}
+
+.control-radio input:checked+.control_indicator::before {
+  animation-name: s-ripple-dup;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+}
+
+.spinner div {
+  position: absolute;
+  width: 50%;
+  height: 150%;
+  background: #fe9a00;
+  transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+}
+
+.spinner div:nth-child(1) {
+  --delay: 0.1;
+  --rotation: 36;
+  --translation: 150;
+}
+
+.spinner div:nth-child(2) {
+  --delay: 0.2;
+  --rotation: 72;
+  --translation: 150;
+}
+
+.spinner div:nth-child(3) {
+  --delay: 0.3;
+  --rotation: 108;
+  --translation: 150;
+}
+
+.spinner div:nth-child(4) {
+  --delay: 0.4;
+  --rotation: 144;
+  --translation: 150;
+}
+
+.spinner div:nth-child(5) {
+  --delay: 0.5;
+  --rotation: 180;
+  --translation: 150;
+}
+
+.spinner div:nth-child(6) {
+  --delay: 0.6;
+  --rotation: 216;
+  --translation: 150;
+}
+
+.spinner div:nth-child(7) {
+  --delay: 0.7;
+  --rotation: 252;
+  --translation: 150;
+}
+
+.spinner div:nth-child(8) {
+  --delay: 0.8;
+  --rotation: 288;
+  --translation: 150;
+}
+
+.spinner div:nth-child(9) {
+  --delay: 0.9;
+  --rotation: 324;
+  --translation: 150;
+}
+
+.spinner div:nth-child(10) {
+  --delay: 1;
+  --rotation: 360;
+  --translation: 150;
+}
+
+@keyframes spinner-fzua35 {
+
+  0%,
+  10%,
+  20%,
+  30%,
+  50%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.cardp {
+  clip-path: polygon(0% 0%, 100% 0%, 101% 0%, 0% 78%);
+}
+
+.bgimage {
+  background-image: url("../public/img/baner.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ellipsis-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.before::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  background: red;
+  display: flex;
+  width: 80px;
+  height: 80px;
+  rotate: 45deg;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-controls button:not(:disabled):hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+option:checked {
+  background-color: #c9c6c6;
+
+}
+
+/* styles/Card.module.css */
+.card {
+  @apply flex flex-col grow rounded-lg overflow-hidden relative shadow-md;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  @apply shadow-lg;
+}
+
+.cardImage {
+  @apply rounded-2xl object-cover w-full h-48;
+  transition: transform 0.3s ease;
+}
+
+.cardImage:hover {
+  transform: scale(1.05);
+}
+
+.priceContainer {
+  @apply flex flex-col items-center;
+}
+
+.discountedPrice {
+  @apply flex items-center gap-1 text-lg font-semibold;
+}
+
+.addToCartButton {
+  @apply bg-amber-500 h-12 flex items-center justify-center;
+  transition: background-color 0.3s ease;
+}
+
+.addToCartButton:hover {
+  @apply bg-amber-600;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
