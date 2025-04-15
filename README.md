@@ -2,7 +2,7 @@
 ![MUI](https://img.shields.io/badge/MUI-7.0.1-blue?logo=mui&style=flat)
 ![Zustand](https://img.shields.io/badge/Zustand-5.0.3-lightgrey)
 
-
+<div dir="rtl">
 # فروشگاه آنلاین لوازم تحریر
 [DEMO](https://shop-virgools.vercel.app/)
 
@@ -45,3 +45,4 @@
 1. ریپازیتوری رو کلون کنید:
 ```bash
 git clone https://github.com/your-username/stationery-shop.git
+</div>
