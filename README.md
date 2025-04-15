@@ -2,9 +2,10 @@
 ![tailwind css](https://img.shields.io/badge/tailwindcss-3.4.17-blue)
 ![Zustand](https://img.shields.io/badge/Zustand-5.0.3-lightgrey)
 
+[DEMO](https://shop-virgools.vercel.app/)
+
 <div dir="rtl">
 # فروشگاه آنلاین لوازم تحریر
-[DEMO](https://shop-virgools.vercel.app/)
 
 ![Image](https://github.com/user-attachments/assets/0137e378-9d71-4a24-a669-4851bc40cf97)
 ![Image](https://github.com/user-attachments/assets/10645b34-49c8-45ad-82fd-20b2eb11e19e)
