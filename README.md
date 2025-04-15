@@ -1,5 +1,5 @@
 ![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?logo=next.js&style=flat)
-![MUI](https://img.shields.io/badge/MUI-7.0.1-blue?logo=mui&style=flat)
+![tailwind css](https://img.shields.io/badge/[MUI-7.0.1-blue?logo=mui&style=flat](https://tailwindcss.com/_next/static/media/tailwindcss-logotype.a1069bda.svg))
 ![Zustand](https://img.shields.io/badge/Zustand-5.0.3-lightgrey)
 
 <div dir="rtl">
@@ -25,16 +25,14 @@
 
 ## تکنولوژی‌های استفاده شده 🛠️
 - **فرانت‌اند:** 
-  - Next.js 15 (با App Router)
-  - React 19
-  - Tailwind CSS 3
+  - Next.js 15.3.0 (با App Router)
+  - React 19.0.0
+  - Tailwind CSS 3.4.17
 - **مدیریت حالت:** 
-  - Zustand
+  - Zustand 5.0.3
 - **ابزارهای جانبی:**
-  - Zod برای ولیدیشن
-  - React Hook Form
-  - Axios برای API Calls
 
+- clsx 2.1.1
 ## پیش‌نیازها 📋
 - Node.js v18.x یا بالاتر
 - npm v9.x یا بالاتر
