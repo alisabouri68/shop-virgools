@@ -5,20 +5,20 @@ import LeftHeader from "./LeftHeader";
 import BtnToggleTheme from "./btnToggleTheme";
 import ShopingCart from "./ShopingCart";
 import SearchBox from "./SearchBox";
-import ModalParent from "../modal/ModalParent";
+import Menu from "./menu/Menu";
 function Header() {
   return (
-    <header className="h-84px mb-5 ">
+    <header className=" mb-5 sticky z-50 top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-[bg-[var(--background)]]/60">
       <Container>
-        <div className="w-full h-full flex shadow-sm shadow-gray-200 dark:shadow-gray-900 relative z-10 bg-[var(--background)]">
+        <div className="h-full flex items-center justify-between border-b px-4">
           <RighHeader>
+            <Menu />
             <ShopingCart />
             <BtnToggleTheme />
-            <SearchBox/>
-            
+            <SearchBox />
+
           </RighHeader>
-          <LeftHeader>
-          </LeftHeader>
+          <LeftHeader />
         </div>
       </Container>
     </header>
