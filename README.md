@@ -55,4 +55,4 @@
 
 1. ریپازیتوری رو کلون کنید:
 ```bash
-git clone https://github.com/your-username/stationery-shop.git
+git clone https://github.com/alisabouri68/shop-virgools.git
