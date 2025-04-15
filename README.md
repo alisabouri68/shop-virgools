@@ -1,4 +1,10 @@
+![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?logo=next.js&style=flat)
+![MUI](https://img.shields.io/badge/MUI-7.0.1-blue?logo=mui&style=flat)
+![Zustand](https://img.shields.io/badge/Zustand-5.0.3-lightgrey)
+
+
 # فروشگاه آنلاین لوازم تحریر
+[DEMO](https://shop-virgools.vercel.app/)
 
 ![Image](https://github.com/user-attachments/assets/0137e378-9d71-4a24-a669-4851bc40cf97)
 ![Image](https://github.com/user-attachments/assets/10645b34-49c8-45ad-82fd-20b2eb11e19e)
@@ -15,15 +21,12 @@
 - سیستم مدیریت حالت با Zustand
 - صفحه‌بندی و فیلتر پیشرفته محصولات
 - سبد خرید پویا با آپدیت لحظه‌ای
-- سیستم احراز هویت کاربران
 - جستجوی هوشمند محصولات
-- سیستم امتیازدهی و نظرات
 
 ## تکنولوژی‌های استفاده شده 🛠️
 - **فرانت‌اند:** 
   - Next.js 15 (با App Router)
-  - React 18
-  - TypeScript
+  - React 19
   - Tailwind CSS 3
 - **مدیریت حالت:** 
   - Zustand
