@@ -1,5 +1,5 @@
 ![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?logo=next.js&style=flat)
-![tailwind css](https://tailwindcss.com/_next/static/media/tailwindcss-logotype.a1069bda.svg)
+![tailwind css](https://img.shields.io/badge/tailwindcss-3.4.17-blue)
 ![Zustand](https://img.shields.io/badge/Zustand-5.0.3-lightgrey)
 
 <div dir="rtl">
